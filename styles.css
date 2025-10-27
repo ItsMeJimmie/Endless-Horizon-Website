@@ -1,0 +1,478 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background-color: #F8F8FF;
+  scroll-behavior: smooth;
+}
+
+p, li {
+  font-family: 'Raleway', 'Courier New', Courier, monospace;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+}
+
+.fa-solid, .fa-brands {
+  color: #F8F8FF;
+  transition: color .4s ease
+}
+
+.fa-solid:hover, .fa-brands:hover {
+  color: #F56E0F;
+}
+
+/*
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+*/
+
+/* Wrapper to hold the structure */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Style */
+header {
+  background-color: #262626;
+  color: #FBFBFB;
+  padding: 20px;
+}
+
+/* Flexbox layout for header content */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+}
+
+/* Buttons centered */
+.nav-buttons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navigation buttons */
+.nav-buttons button, 
+.mobile-menu button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #262626;
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  color: #FBFBFB;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+/* Navigation button style when hovering over */
+.nav-buttons button:hover,
+.mobile-menu button:hover {
+  color: #F56E0F;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Mobile dropdown menu (hidden by default) */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #262626;
+  text-align: center;
+  transition: max-height 1s ease;
+}
+
+/* Mobile dropdown button look */
+.mobile-menu button {
+  margin: 10px auto;
+  width: 100%;
+}
+
+/* When visible */
+.mobile-menu.show {
+  max-height: 500px; /* enough to fit your buttons */
+  opacity: 1;
+}
+
+/* Optional spacer if needed */
+.spacer {
+  flex: 1;
+}
+
+/* Another spacer */
+.spacer2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Another spacer */
+.spacer3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Name aligned to left */
+.site-name {
+  font-size: 24px;
+  margin: 0;
+  flex: 1;
+}
+
+/* Media query for screen width 800px and below */
+@media (max-width: 1200px) {
+  .nav-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+}
+
+
+/*
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+*/
+
+/* Main Content */
+main {
+  flex: 1;
+}
+
+/* Parallax implementation*/
+.parallax {
+  position: relative;
+  background-image: url('Images/background.jpg'); /* Pulls the image from Images folder */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* enables the parallax effect */
+  height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FBFBFB;
+}
+
+/*Design for the text in the box*/
+.parallax-text {
+  background-color: #262626;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  display: flex;
+  gap: 25px;
+}
+
+/* This is the code for the profile picture*/
+.parallax-text img {
+  height: 180px;
+  width: 180px;
+  border-radius: 10px;
+}
+
+/* Section of the home box with info */
+.parallaxBoxInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+/* Download button styling */
+.download-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+.download-btn button {
+  font-size: 15px;
+  padding: 5px 5px;
+  background-color: #F8F8FF;
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  transition: background-color .4s ease;
+}
+
+.download-btn button:hover {
+  background-color: #F56E0F;
+  cursor: pointer;
+}
+
+/* This is for  the interests and education*/
+.boxInterestAndEducation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* This is meant for sizing of the interests and education ul and p tag */
+.boxInterestAndEducation ul, p {
+  font-size: 13px;
+}
+
+/* This is for  the interests*/
+.interests {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-right: 10px;
+}
+
+.itemInsterests {
+  text-align: left;
+}
+
+/* Interest and the children list items to look indented */
+.interests ul {
+  padding-left: 30px;
+}
+
+/* This is for the education*/
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 20px;
+}
+
+
+/*This is resizing of the black box that contains the profile picture and about me and stuff*/
+@media (max-width: 750px) {
+  .parallax-text {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+/*This will be the resizing when 1000px max reached where the interests and education will be switched to colum rather than row*/
+@media (max-width: 1000px) {
+  .boxInterestAndEducation {
+    flex-direction: column;
+  }
+
+  .interests {
+    padding-left: 0px;
+    align-items: flex-start;
+  }
+
+  .interests ul {
+    padding-left: 30px;
+  }
+
+  .education {
+    padding-left: 0px;
+  }
+}
+
+/*Design for the actuall box that holds the Experience and Education Info*/
+.experienceContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 50px;
+  background-color: #262626;
+  flex-direction: column;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 18px;
+  color: #FBFBFB;
+}
+
+/*This is for the buillet point size*/
+.experience p, ul {
+  font-size: 15px;
+}
+
+/*bullet Point spacing for Experience*/
+.experience ul {
+  padding-left: 25px;
+}
+
+/*projectSection Styles Here*/
+.projectsSection {
+  background-color: #f0efef;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 50px;
+  flex-direction: column;
+}
+
+.projectsSection ul {
+  padding-left: 25px;
+}
+
+/*Projects Styles Here*/
+.projects {
+  color: #262626;
+}
+
+.mediumArticles {
+  background-color: #262626;
+  padding: 50px;
+}
+
+/*Section for the medium grid style*/
+.medium-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.article-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-card:hover {
+  transform: scale(1.03);
+}
+
+.article-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.article-title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: #FBFBFB;
+}
+
+.medium-grid a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/*Make it so that when you hover over it jumps out a little*/
+.medium-grid a:hover {
+  transform: scale(1.05);
+}
+
+/*Formatting and styling of the image*/
+.medium-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* This is for contact */
+.contact {
+  background-color: #f0efef;
+  padding: 50px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #262626; 
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #FBFBFB;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f0efef;
+}
+
+.contact-form button {
+  padding: 0.75rem;
+  background-color: #f0efef; /* primary color */
+  color: #262626;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #F56E0F;
+}
+
+
+/*
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+SPACING
+*/
+
+/* Footer Style */
+footer {
+  background-color: #262626;
+  color: #FBFBFB;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
